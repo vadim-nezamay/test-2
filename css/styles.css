@@ -1,0 +1,656 @@
+:root {
+  /* Головна палітра кольорів */
+  --primary-text-color: #757575;
+  --title-text-color: #212121;
+  --accent-color: #2196f3;
+  --white-text-color: #ffffff;
+  --social-primary-color: #afb1b8;
+  /* CSS-змінні фонові кольори */
+  --secondary-bg-color: #f5f4fa;
+  --footer-bg-color: #2f303a;
+  --accent-bg-color: #2196f3;
+  --white-bg-color: #ffffff;
+  --social-bg-color: rgba(255, 255, 255, 0.1);
+  /* FLEX-змінні */
+  --project-list-gap: 30px;
+  --section-padding-gap: 94px;
+  /* Тіні карток та кнопок */
+  --shadow-portfolio: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-studio: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  color: var(--primary-text-color);
+  font-family: Roboto, Raleway, Montserrat, sans-serif;
+  letter-spacing: 0.03em;
+
+  margin: 0;
+}
+
+/**
+  |============================
+  | RESET
+  |============================
+*/
+
+/* скидання деяких налаштувань списків та посилань */
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+/* скидаємо MARGIN де це потрібно */
+ul,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+/* Для картинок прибираємо нижній просвіт */
+img {
+  display: block;
+}
+
+/**
+  |============================
+  | КОНТЕЙНЕР
+  |============================
+*/
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/**
+  |============================
+  | Верхня лінія сторінки Студія
+  |============================
+*/
+.logo-web {
+  color: #2196f3;
+  text-decoration: none;
+
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.header .logo-web {
+  display: inline-block;
+}
+
+.logo-studio {
+  color: #000000;
+}
+.header {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ececec;
+
+  background-color: var(--white-bg-color);
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.nav a.current {
+  color: var(--accent-color);
+}
+
+.nav a {
+  color: var(--title-text-color);
+}
+.nav a:hover,
+.nav a:focus {
+  color: var(--accent-color);
+}
+
+.contacts a {
+  color: var(--primary-text-color);
+}
+.contacts a:hover,
+.contacts a:focus {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.envelope,
+.smartphone {
+  margin-right: 10px;
+}
+
+/* ФЛЕКС ХЕДЕРУ */
+
+.header-flex {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin-left: 93px;
+}
+
+.nav-list {
+  display: flex;
+}
+.nav-list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header .contacts {
+  display: flex;
+  margin-left: auto;
+}
+.header .contacts-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.header .mail,
+.header .tel {
+  display: flex;
+  align-items: center;
+}
+
+/* Додаємо іконки
+
+.header .mail::before,
+.header .tel::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.tel::before {
+  background-image: url('../images/icons/smartphone.svg');
+}
+.mail::before {
+  background-image: url(../images/icons/envelope.svg);
+} */
+
+/**
+  |============================
+  | Основний контент сторінки Студія
+  |============================
+*/
+
+/**
+  |============================
+  | Герой
+  |============================
+*/
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 1600px;
+  min-height: 600px;
+  background-color: #2f303a;
+  text-align: center;
+
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/bg-images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-title {
+  width: 696px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  color: var(--white-text-color);
+
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero .button {
+  color: var(--white-text-color);
+  background-color: var(--accent-bg-color);
+  cursor: pointer;
+
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  min-width: 216px;
+  min-height: 50px;
+  border: transparent;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+/**
+  |============================
+  | Студія-Особливості
+  |============================
+*/
+
+.section-features {
+  margin-top: 0;
+  padding-top: var(--section-padding-gap);
+  padding-bottom: var(--section-padding-gap);
+}
+
+.section-features .subtitle {
+  margin-bottom: 10px;
+
+  color: var(--title-text-color);
+
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.section-features p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.feature-box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+
+  background-color: var(--secondary-bg-color);
+}
+
+/* FLEX Особливості */
+
+.feature-list {
+  display: flex;
+}
+
+.feature-list .item {
+  width: calc((100%-90px) / 4);
+}
+
+.feature-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/**
+  |============================
+  | "Чим ми займаємося" AND "Наша команда"
+  |============================
+*/
+
+.section-work h2,
+.section-team h2,
+.section-clients h2 {
+  margin-bottom: 50px;
+
+  color: var(--title-text-color);
+
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+.section-work {
+  /* padding-top: var(--section-padding-gap); */
+  padding-bottom: var(--section-padding-gap);
+}
+
+.section-team {
+  padding-top: var(--section-padding-gap);
+  padding-bottom: var(--section-padding-gap);
+
+  background-color: var(--secondary-bg-color);
+}
+
+.team-name {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section-team h3 {
+  color: var(--title-text-color);
+
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.section-team p {
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team-list .item {
+  box-shadow: var(--shadow-studio);
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--white-bg-color);
+}
+
+/* TEAM SOCIAL */
+
+.section-team .social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.section-team .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  color: var(--social-primary-color);
+  fill: currentColor;
+}
+
+.section-team .social-link:hover,
+.section-team .social-link:focus {
+  background-color: var(--accent-bg-color);
+  fill: var(--white-text-color);
+  cursor: pointer;
+}
+
+/* FLEX Чим займаємося та команда */
+
+.section-work .work-list,
+.section-team .team-list {
+  display: flex;
+}
+.work-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+.team-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+/**
+  |============================
+  | СЕКЦІЯ КЛІЄНТИ
+  |============================
+*/
+
+.section-clients {
+  padding-top: var(--section-padding-gap);
+  padding-bottom: var(--section-padding-gap);
+}
+
+.section-clients .list {
+  display: flex;
+  justify-content: center;
+}
+.section-clients .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.section-clients .link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  color: var(--social-primary-color);
+  fill: currentColor;
+}
+
+.section-clients .link:hover,
+.section-clients .link:focus {
+  color: var(--accent-color);
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/**
+  |============================
+  | Підвал сторінки
+  |============================
+*/
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: var(--footer-bg-color);
+}
+
+.footer .logo-web {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+footer .logo-studio {
+  color: #ffffff;
+}
+
+.footer .address {
+  color: var(--white-text-color);
+}
+
+.footer-address a {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.footer-address a:hover,
+.footer-address a:focus {
+  color: var(--accent-color);
+}
+
+.footer .address-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+/* FOOTER SOCIAL */
+
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.social {
+  margin-left: 70px;
+}
+
+.footer .social-title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16px / 14px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--white-text-color);
+}
+
+.social .list {
+  display: flex;
+}
+
+.social .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Add icons socials */
+
+.footer .social-icons {
+  fill: var(--white-text-color);
+}
+
+.social .link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  background-color: var(--social-bg-color);
+
+  border-radius: 50%;
+}
+
+.social .link:hover,
+.social .link:focus {
+  background-color: var(--accent-bg-color);
+  cursor: pointer;
+}
+
+/**
+  |============================
+  | Main content of a page Portfolio
+  |============================
+*/
+
+.filters .button {
+  display: inline-block;
+  padding: 6px 22px;
+  border-radius: 4px;
+
+  min-height: 38px;
+  border: transparent;
+
+  color: var(--title-text-color);
+  background-color: var(--secondary-bg-color);
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: inherit;
+}
+
+.filters .button:hover,
+.filters .button:focus {
+  color: var(--white-text-color);
+  background-color: var(--accent-bg-color);
+  box-shadow: var(--shadow-portfolio);
+}
+
+.section-projects {
+  padding-top: var(--section-padding-gap);
+  padding-bottom: var(--section-padding-gap);
+}
+
+.section-projects .filters {
+  margin-bottom: 50px;
+}
+
+.project-list > li {
+  width: 370px;
+}
+
+.section-projects h2 {
+  width: 322px;
+  min-height: 36px;
+
+  color: var(--title-text-color);
+
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.section-projects p {
+  width: 322px;
+  min-height: 30px;
+
+  margin-top: 4px;
+
+  font-size: 16px;
+  line-height: 1.88;
+}
+
+.project-name {
+  padding: 20px 24px;
+
+  border-left: 1px solid #ececec;
+  border-right: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+.project-list > .list-item:hover {
+  box-shadow: var(--shadow-portfolio);
+}
+
+/* FLEX FILTERS */
+
+.filters {
+  display: flex;
+  justify-content: center;
+}
+.filters .item:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* FLEX PROJECTS */
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--project-list-gap);
+}
+
+/* Приховування заголовків */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
